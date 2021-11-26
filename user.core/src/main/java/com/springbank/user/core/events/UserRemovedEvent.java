@@ -7,3 +7,4 @@ public class UserRemovedEvent {
 
     private String id;
 }
+
