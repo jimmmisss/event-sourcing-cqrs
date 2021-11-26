@@ -1,1 +1,6 @@
+com/springbank/user/core/models/Account$AccountBuilder.class
+com/springbank/user/core/models/User$UserBuilder.class
+com/springbank/user/core/models/Account.class
+com/springbank/user/core/models/User.class
+com/springbank/user/core/models/Role.class
 com/springbank/user/core/configuration/AxonConfig.class

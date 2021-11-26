@@ -1,1 +1,4 @@
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/models/User.java
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/models/Role.java
 /home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/configuration/AxonConfig.java
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/models/Account.java
