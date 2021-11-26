@@ -1,3 +1,6 @@
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/events/UserUpdatedEvent.java
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/events/UserRemovedEvent.java
+/home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/events/UserRegistredEvent.java
 /home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/models/User.java
 /home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/models/Role.java
 /home/wesley/Documents/.event-sourcing-cqrs/user.core/src/main/java/com/springbank/user/core/configuration/AxonConfig.java
