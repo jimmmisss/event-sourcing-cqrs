@@ -1,17 +1,16 @@
 package com.springbank.user.core.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -27,5 +26,6 @@ public class User {
     @Email(message = "please provide a valid email address")
     private String email;
     @NotNull(message = "please provide account credentials")
+    @Valid
     private Account account;
 }

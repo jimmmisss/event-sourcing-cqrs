@@ -1,6 +1,6 @@
 package com.springbank.user.query.api.handlers;
 
-import com.springbank.user.core.events.UserRegistredEvent;
+import com.springbank.user.core.events.UserRegisteredEvent;
 import com.springbank.user.core.events.UserRemovedEvent;
 import com.springbank.user.core.events.UserUpdatedEvent;
 import com.springbank.user.query.api.repositories.UserRepository;
@@ -18,7 +18,7 @@ public class UserEventHandlerImpl implements UserEventHandler {
 
     @EventHandler
     @Override
-    public void on(UserRegistredEvent event) {
+    public void on(UserRegisteredEvent event) {
         repository.save(event.getUser());
     }
 

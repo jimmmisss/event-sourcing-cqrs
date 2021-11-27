@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -19,13 +20,13 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 @RestController
 @AllArgsConstructor
 @Slf4j
-@RequestMapping(path = "/api/v1/registerUser")
+@RequestMapping(path = "/api/v1/user")
 public class RegisterUserController {
 
     private final CommandGateway commandGateway;
 
     @PostMapping
-    public ResponseEntity<RegisterUserResponse> registerUser(@RequestBody RegisterUserCommand command) {
+    public ResponseEntity<RegisterUserResponse> registerUser(@Valid @RequestBody RegisterUserCommand command) {
         command.setId(UUID.randomUUID().toString());
         try {
             commandGateway.send(command);
@@ -36,5 +37,4 @@ public class RegisterUserController {
             return new ResponseEntity<>(new RegisterUserResponse(safeMessageError), INTERNAL_SERVER_ERROR);
         }
     }
-
 }
