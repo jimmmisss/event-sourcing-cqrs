@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @Slf4j
-@RequestMapping(path = "/api/v1/user")
+@RequestMapping(path = "/api/v1/user-command-updade")
 public class UpdateUserController {
 
     private final CommandGateway commandGateway;

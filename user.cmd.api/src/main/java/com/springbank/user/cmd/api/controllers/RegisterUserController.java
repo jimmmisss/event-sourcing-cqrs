@@ -19,7 +19,7 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @RestController
 @Slf4j
-@RequestMapping(path = "/api/v1/user")
+@RequestMapping(path = "/api/v1/user-command-register")
 public class RegisterUserController {
 
     private final CommandGateway commandGateway;

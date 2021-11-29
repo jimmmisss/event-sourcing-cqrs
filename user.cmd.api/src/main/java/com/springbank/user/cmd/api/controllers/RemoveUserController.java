@@ -16,7 +16,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @Slf4j
-@RequestMapping(path = "/api/v1/user")
+@RequestMapping(path = "/api/v1/user-command-remove")
 public class RemoveUserController {
 
     private final CommandGateway commandGateway;
