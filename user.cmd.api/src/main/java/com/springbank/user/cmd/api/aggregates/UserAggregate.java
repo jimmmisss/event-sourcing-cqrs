@@ -19,7 +19,6 @@ import java.util.UUID;
 
 @Aggregate
 public class UserAggregate {
-
     @AggregateIdentifier
     private String id;
     private User user;
@@ -32,28 +31,30 @@ public class UserAggregate {
 
     @CommandHandler
     public UserAggregate(RegisterUserCommand command) {
-        User newUser = command.getUser();
+        var newUser = command.getUser();
         newUser.setId(command.getId());
         var password = newUser.getAccount().getPassword();
         passwordEncoder = new PasswordEncoderImpl();
         var hashedPassword = passwordEncoder.hashPassword(password);
-        UserRegisteredEvent event = UserRegisteredEvent.builder()
+        newUser.getAccount().setPassword(hashedPassword);
+
+        var event = UserRegisteredEvent.builder()
                 .id(command.getId())
                 .user(newUser)
                 .build();
+
         AggregateLifecycle.apply(event);
     }
 
     @CommandHandler
     public void handle(UpdateUserCommand command) {
         var updatedUser = command.getUser();
-        updatedUser.setId(updatedUser.getId());
-
+        updatedUser.setId(command.getId());
         var password = updatedUser.getAccount().getPassword();
         var hashedPassword = passwordEncoder.hashPassword(password);
         updatedUser.getAccount().setPassword(hashedPassword);
 
-        var event = UserRegisteredEvent.builder()
+        var event = UserUpdatedEvent.builder()
                 .id(UUID.randomUUID().toString())
                 .user(updatedUser)
                 .build();
@@ -84,5 +85,4 @@ public class UserAggregate {
     public void on(UserRemovedEvent event) {
         AggregateLifecycle.markDeleted();
     }
-
 }
